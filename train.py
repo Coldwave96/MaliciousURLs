@@ -43,6 +43,16 @@ class url(object):
 
     #获取文本中的请求列表
     def get_query_list(self, filename):
+        directory = str(os.getcwd()) + '\\data\\train'
+        filepath = directory + '\\' + filename
+        data = open(filepath, 'r', encoding = 'utf-8').readlines()
+        query_list = []
+        for d in data:
+            d = str(urllib.parse.unquote(d))
+            query_list.append(d)
+        return list(set(query_list))
+
+    def test_query_list(self, filename):
         directory = str(os.getcwd()) + '\\data\\test'
         filepath = directory + '\\' + filename
         data = open(filepath, 'r', encoding = 'utf-8').readlines()
@@ -76,5 +86,5 @@ class url(object):
 if __name__ == '__main__':
     u = url()
 
-    u.predict(['www.foo.com/id=1<script>alert(1)</script>', 'www.foo.com/name=admin\' or 1=1', 'abc.com/admin.php',
-               '"><svg onload=confirm(1)>', 'test/q=<a href="javascript:confirm(1)>', 'q=../etc/passwd'])
+    testurls = u.test_query_list('test2.txt')
+    u.predict(testurls)

@@ -30,7 +30,7 @@ class url(object):
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=20, random_state=42)
 
         #定义模型训练方法（逻辑回归）
-        self.lgs = LogisticRegression()
+        self.lgs = LogisticRegression(solver='liblinear')
 
         #训练模型
         self.lgs.fit(X_train, y_train)
@@ -40,9 +40,9 @@ class url(object):
 
     #获取文本中的请求列表
     def get_query_list(self, filename):
-        directory = str(os.getcwd()) + '\\data\\test'
+        directory = str(os.getcwd()) + '\\data\\train'
         filepath = directory + '\\' + filename
-        data = open(filepath, 'r', encoding = 'utf-8').readlines()
+        data = open(filepath, 'r', encoding='utf-8').readlines()
         query_list = []
         for d in data:
             d = str(urllib.parse.unquote(d))
@@ -71,7 +71,7 @@ class url(object):
         return res_list
 
 if __name__ == '__main__':
-    u = url()
+    #u = url()
     #with open('lgs.pickle', 'wb') as output:
         #pickle.dump(u, output)
 

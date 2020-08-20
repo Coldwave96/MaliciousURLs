@@ -5,7 +5,7 @@
     <a><img src="https://img.shields.io/github/forks/Coldwave96/MaliciousURLs"></a>
     <a><img src="https://img.shields.io/github/stars/Coldwave96/MaliciousURLs"></a>
     <a><img src="https://img.shields.io/badge/Python-3-blue"></a>
-    <a><img src="https://img.shields.io/badge/Platform-Windows%20Linux-orange"></a>
+    <a><img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-orange"></a>
 </p>
 
 ## 介绍
